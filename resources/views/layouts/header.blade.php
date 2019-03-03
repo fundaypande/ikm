@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="logo-pro">
-                <a href="{{ url('/') }}"><img class="main-logo" src="{{!! asset('images/logo/buleleng-kecil.png') !!}}" alt="" /></a>
+                <a href="{{ url('/') }}"><img class="main-logo" src="{!! asset('images/buleleng-kecil.png') !!}" alt="" /></a>
             </div>
         </div>
     </div>

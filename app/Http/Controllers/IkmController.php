@@ -10,6 +10,7 @@ use App\JenisPeralatan;
 use App\NilaiProduksi;
 use App\ProfilIkm;
 use App\Komoditi;
+use App\Penerima;
 use Auth;
 use Yajra\Datatables\Datatables;
 
@@ -24,13 +25,15 @@ class IkmController extends Controller
   {
     //id user yang login
     $idUser = Auth::user();
+
+    $penerima = Penerima::all();
     // dd($idUser -> id);
     $dataEvaluasi = DataEvaluasi::join('kriterias', 'kriterias.id', '=', 'data_evaluasis.id_kriteria')
                   ->select('data_evaluasis.*', 'kriterias.nama')
                   -> where('id_user', '=', $idUser->id)
                   ->get();
     // dd($dataEvaluasi);
-    return view('ikm.evaluasi.evaluasi', ['evaluasi' => $dataEvaluasi]);
+    return view('ikm.evaluasi.evaluasi', ['evaluasi' => $dataEvaluasi])->with('penerima', $penerima);
   }
 
   public function updateEvaluasi(Request $request)

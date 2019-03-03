@@ -120,8 +120,10 @@
                               <thead>
                                 <tr>
                                   <th width="50">ID</th>
+                                  <th>Tanggal</th>
                                   <th>Nama IKM</th>
                                   <!-- <th>Komoditi</th> -->
+
                                   <th>Tahun</th>
                                   <th>Action</th>
                                 </tr>
@@ -161,7 +163,9 @@
         ajax: "{{ route('api.penerima') }}",
         columns: [
           {data: 'id', name: 'id'},
+          {data: 'created_at', name: 'created_at'},
           {data: 'name', name: 'name'},
+
           {data: 'tahun', name: 'tahun'},
           {data: 'action', name: 'action', orderable: false, searchable: false}
         ]

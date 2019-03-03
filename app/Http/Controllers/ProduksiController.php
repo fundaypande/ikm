@@ -52,7 +52,13 @@ class ProduksiController extends Controller
 
     public function showOne($id)
     {
-      $produksi = NilaiProduksi::findOrFail($id);
+      // $produksi = NilaiProduksi::findOrFail($id);
+
+      $produksi = NilaiProduksi::join('users', 'users.id', '=', 'nilai_produksis.user_id')
+                  -> join('profilikm', 'profilikm.user_id', '=', 'users.id')
+                  -> select('nilai_produksis.*', 'users.photo AS user_photo', 'profilikm.*', 'profilikm.id AS id_profilikm')
+                  -> findOrFail($id);
+      // dd($produksi);
 
       return view('public.showOne', ['produksi' => $produksi]);
     }

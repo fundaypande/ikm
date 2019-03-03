@@ -231,6 +231,9 @@ return [
         // --> Yajra Aliases
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
+        //--> Input
+        'Input' => Illuminate\Support\Facades\Input::class,
+
     ],
 
 ];

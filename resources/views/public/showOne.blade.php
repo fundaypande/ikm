@@ -11,10 +11,10 @@ if($produksi -> photo == null){
 ?>
 
 <?php
-if($produksi -> user -> photo == null){
+if($produksi -> user_photo == null){
   $fotoPemilik = 'user.png';
 } else {
-  $fotoPemilik = $produksi -> user -> photo;
+  $fotoPemilik = $produksi -> user_photo;
 }
 ?>
 
@@ -56,9 +56,9 @@ if($produksi -> user -> photo == null){
                                       <div class="profil-produsen" style="background-image: url({!! asset('images/' . $fotoPemilik) !!})"></div>
                                     </div>
                                     <div class="col-ms-10">
-                                      <a href="/produsen/{{ $produksi -> user -> profilIkm -> id }}" target="_blank"> <p><b>{{ $produksi -> user -> profilIkm -> nama_usaha }}</p></b> </a>
-                                      <p><b>Alamat {{ $produksi -> user -> profilIkm -> alamat }}</p></b>
-                                      <p><b>Telepon {{ $produksi -> user -> profilIkm -> telpon }}</p></b>
+                                      <a href="/produsen/{{ $produksi -> id_profilikm }}" target="_blank"> <p><b>{{ $produksi -> nama_usaha }}</p></b> </a>
+                                      <p><b>Alamat {{ $produksi -> alamat }}</p></b>
+                                      <p><b>Telepon {{ $produksi ->  telpon }}</p></b>
                                     </div>
                                   </div>
 

@@ -126,7 +126,12 @@ class PenerimaController extends Controller
     $user_tahun = $request->user_id.$request->tahun;
 
     $user = User::findOrFail($request->user_id);
-    $profilId = $user -> profilIkm -> id;
+
+    $profilIkm = User::join('profilikm', 'profilikm.user_id', '=', 'users.id')
+                ->select('profilikm.id AS idIkm')
+                ->findOrFail($request->user_id);
+
+    $profilId = $profilIkm -> idIkm;
     // dd($profilId);
     $profil = ProfilIkm::findOrFail($profilId);
 
@@ -180,7 +185,14 @@ class PenerimaController extends Controller
   {
     // dd($profilId);
     $user = User::findOrFail($idUser);
-    $profilId = $user -> profilIkm -> id;
+
+
+    $profilIkm = User::join('profilikm', 'profilikm.user_id', '=', 'users.id')
+                ->select('profilikm.id AS idIkm')
+                ->findOrFail($idUser);
+
+    $profilId = $profilIkm -> idIkm;
+
 
     $profil = ProfilIkm::findOrFail($profilId);
 

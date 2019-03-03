@@ -100,8 +100,13 @@
                             <?php $i++; ?>
                           @endforeach
 
+                          @foreach($penerima as $penerim)
+                            @if($penerim -> user_id == Auth::user() -> id)
+                              <button type="submit" class="btn btn-info btn-fill" id="simpan">Simpan Data</button>
+                            @endif
+                          @endforeach
 
-                          <button type="submit" class="btn btn-info btn-fill" id="simpan">Simpan Data</button>
+
 
                         </form>
 

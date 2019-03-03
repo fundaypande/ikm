@@ -107,24 +107,24 @@
                             <input type="hidden" name="id" id="id" value="" method="patch">
                             <div class="form-group">
                               <label for="jenis_produksi">Jenis Produksi</label>
-                              <input type="text" name="jenis_produksi" value="" class="form-control" id="jenis_produksi" required placeholder="">
+                              <input type="text" name="jenis_produksi" value="{{ old('jenis_produksi') }}" class="form-control" id="jenis_produksi" required placeholder="">
                             </div>
                             <div class="form-group">
                               <label for="jumlah">Jumlah</label>
-                              <input min="1" type="text" name="jumlah" value="" class="form-control" id="jumlah" required placeholder="">
+                              <input min="1" type="text" name="jumlah" value="{{ old('jumlah') }}" class="form-control" id="jumlah" required placeholder="">
                             </div>
                             <div class="form-group">
                               <label for="harga">Harga</label>
-                              <input type="text" name="harga" value="" class="form-control" id="harga" placeholder="Rp." required>
+                              <input type="text" name="harga" value="{{ old('harga') }}" class="form-control" id="harga" placeholder="Rp." required>
                             </div>
                             <div class="form-group">
                               <label for="nilai_penjualan">Nilai Penjualan</label>
-                              <input type="text" name="nilai_penjualan" value="" class="form-control" id="nilai_penjualan" placeholder="Rp." required>
+                              <input type="text" name="nilai_penjualan" value="{{ old('nilai_penjualan') }}" class="form-control" id="nilai_penjualan" placeholder="Rp." required>
                             </div>
 
                             <div class="form-group">
                               <label for="tujuan">Tujuan Pemasaran</label>
-                              <input type="text" name="tujuan" value="" class="form-control" id="tujuan" placeholder="">
+                              <input type="text" name="tujuan" value="{{ old('tujuan') }}" class="form-control" id="tujuan" placeholder="">
                             </div>
                             <div class="form-group">
                               <label for="deskripsi">Deskripsi</label>
